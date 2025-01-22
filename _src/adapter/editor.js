@@ -470,10 +470,30 @@
       }
 
       //接受外部定制的UI
+/*
 
       utils.each(extraUIs, function(obj) {
         toolbarUi.add(obj.itemUI, obj.index);
       });
+*/
+
+        //接受外部定制的UI
+        utils.each(baidu.editor._customizeUI, function (obj, key) {
+            var itemUI, index;
+            if (obj.id && obj.id !== editor.key) {
+                //return false;
+            }else{
+                itemUI = obj.execFn.call(editor, editor, key);
+                if (itemUI) {
+                    index = obj.index;
+                    if (index === undefined) {
+                        index = toolbarUi.items.length;
+                    }
+                    toolbarUi.add(itemUI, index);
+                }
+            }
+        });
+
       this.toolbars = toolbarUis;
     },
     getHtmlTpl: function() {
@@ -988,7 +1008,7 @@
 
   UE.registerUI = function(uiName, fn, index, editorId) {
     utils.each(uiName.split(/\s+/), function(name) {
-      baidu.editor.ui[name] = {
+      baidu.editor._customizeUI[name] = {
         id: editorId,
         execFn: fn,
         index: index
