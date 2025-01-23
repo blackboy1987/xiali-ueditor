@@ -1,16 +1,16 @@
 {
-    "name": "ueditor",
+    "name": "xiali-ueditor",
     "title": "ueditor",
     "description": "UEditor富文本web编辑器",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "homepage": "http://ueditor.baidu.com/",
     "author": {
-        "name": "f-cube @ FEX",
-        "url": "http://fex.baidu.com"
+        "name": "blackboy1987",
+        "url": "https://github.com/blackboy1987"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/fex-team/ueditor.git"
+        "url": "https://github.com/blackboy1987/xiali-react-ueditor"
     },
     "keywords": [
         "ueditor",
@@ -19,7 +19,7 @@
         "rich editor"
     ],
     "bugs": {
-        "url": "https://github.com/fex-team/ueditor/issues"
+        "url": "https://github.com/blackboy1987/xiali-react-ueditor/issues"
     },
     "dependencies": {
         "grunt": "~0.4.1",
